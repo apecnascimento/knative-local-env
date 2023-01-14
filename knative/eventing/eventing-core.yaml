@@ -461,7 +461,7 @@ data:
   # in Trigger objects with its rich filtering capabilities.
   # For more details: https://github.com/knative/eventing/issues/5204
   new-trigger-filters: "disabled"
-  multi-container: "enable"
+
 
 ---
 # Copyright 2021 The Knative Authors
