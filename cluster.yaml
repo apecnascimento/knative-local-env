@@ -5,12 +5,12 @@ nodes:
 - role: control-plane
   image: kindest/node:v1.23.13@sha256:ef453bb7c79f0e3caba88d2067d4196f427794086a7d0df8df4f019d5e336b61
   extraPortMappings:
-    ## expose port 31380 of the node to port 80 on the host
   - containerPort: 31080
     hostPort: 80
-    ## expose port 31443 of the node to port 443 on the host
+    protocol: TCP
   - containerPort: 31443
     hostPort: 443
+    protocol: TCP
 
 
 

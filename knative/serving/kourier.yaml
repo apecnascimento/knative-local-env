@@ -168,6 +168,7 @@ metadata:
     app.kubernetes.io/version: "1.8.1"
     app.kubernetes.io/name: knative-serving
 data:
+  enable-service-access-logging: "true"
   _example: |
     ################################
     #                              #
@@ -385,7 +386,7 @@ spec:
       targetPort: 18000
   selector:
     app: net-kourier-controller
-  type: ClusterIP
+  type: NodePort
 
 ---
 # Copyright 2020 The Knative Authors
@@ -505,13 +506,15 @@ spec:
       port: 80
       protocol: TCP
       targetPort: 8080
+      nodePort: 31080
     - name: https
       port: 443
       protocol: TCP
       targetPort: 8443
+      nodePort: 31443
   selector:
     app: 3scale-kourier-gateway
-  type: LoadBalancer
+  type: NodePort
 ---
 apiVersion: v1
 kind: Service

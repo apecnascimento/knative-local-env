@@ -16,3 +16,6 @@ eventing:
 
 delete:
 	kind delete cluster --name knative
+
+test:
+	kubectl apply -f test-service/knative-service.yaml
