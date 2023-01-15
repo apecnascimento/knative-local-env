@@ -8,6 +8,8 @@ serving:
 	kubectl apply -f ./knative/serving/serving-crds.yaml
 	kubectl apply -f ./knative/serving/serving-core.yaml
 	kubectl apply -f ./knative/serving/kourier.yaml
+	kubectl apply -f ./knative/serving/serving-default-domain.yaml
+	kubectl apply -f ./knative/serving/serving-hpa.yaml
 
 eventing:
 	kubectl apply -f ./knative/eventing/eventing-crds.yaml
